@@ -1,0 +1,67 @@
+# Define a function to convert a letter to its military alphabet word
+def letter_to_military_word(letter):
+    letter = letter.upper()  # Convert the letter to uppercase for consistency
+
+    if letter == 'A':
+        return "Alpha"
+    elif letter == 'B':
+        return "Bravo"
+    elif letter == 'C':
+        return "Charlie"
+    elif letter == 'D':
+        return "Delta"
+    elif letter == 'E':
+        return "Echo"
+    elif letter == 'F':
+        return "Foxtrot"
+    elif letter == 'G':
+        return "Golf"
+    elif letter == 'H':
+        return "Hotel"
+    elif letter == 'I':
+        return "India"
+    elif letter == 'J':
+        return "Juliett"
+    elif letter == 'K':
+        return "Kilo"
+    elif letter == 'L':
+        return "Lima"
+    elif letter == 'M':
+        return "Mike"
+    elif letter == 'N':
+        return "November"
+    elif letter == 'O':
+        return "Oscar"
+    elif letter == 'P':
+        return "Papa"
+    elif letter == 'Q':
+        return "Quebec"
+    elif letter == 'R':
+        return "Romeo"
+    elif letter == 'S':
+        return "Sierra"
+    elif letter == 'T':
+        return "Tango"
+    elif letter == 'U':
+        return "Uniform"
+    elif letter == 'V':
+        return "Victor"
+    elif letter == 'W':
+        return "Whiskey"
+    elif letter == 'X':
+        return "X-ray"
+    elif letter == 'Y':
+        return "Yankee"
+    elif letter == 'Z':
+        return "Zulu"
+    else:
+        return "Unknown"  # Handle unknown characters
+
+# Input a letter
+letter = input("Enter a letter: ")
+
+# Convert the letter to its military alphabet word
+military_word = letter_to_military_word(letter)
+
+# Display the result
+print(f"The military alphabet word for '{letter}' is '{military_word}'.")
