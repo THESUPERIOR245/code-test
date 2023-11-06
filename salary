@@ -1,0 +1,34 @@
+import csv
+from collections import defaultdict
+
+# Define the input and output file names
+input_file = 'employee_data.csv'
+output_file = 'average_salary_per_department.csv'
+
+# Create a dictionary to store department-wise salary information
+department_salaries = defaultdict(list)
+
+# Read the input CSV file and populate the department_salaries dictionary
+with open(input_file, 'r') as csv_file:
+    reader = csv.DictReader(csv_file)
+    for row in reader:
+        department = row['Department']
+        salary = float(row['Salary'])
+        department_salaries[department].append(salary)
+
+# Calculate the average salary per department
+average_salaries = {}
+for department, salaries in department_salaries.items():
+    average_salary = sum(salaries) / len(salaries)
+    average_salaries[department] = average_salary
+
+# Write the results to the output CSV file
+with open(output_file, 'w', newline='') as csv_file:
+    fieldnames = ['Department', 'Average Salary']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+
+    for department, average_salary in average_salaries.items():
+        writer.writerow({'Department': department, 'Average Salary': average_salary})
+
+print(f"Average salaries per department have been calculated and saved to '{output_file}'.")
