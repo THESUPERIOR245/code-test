@@ -1,0 +1,17 @@
+function getTrafficLightColor() {
+    const now = new Date();
+    const hours = now.getHours();
+
+    if (hours >= 6 && hours < 10) {
+        return "Green"; // Morning (6 AM to 9:59 AM)
+    } else if (hours >= 10 && hours < 16) {
+        return "Orange"; // Daytime (10 AM to 3:59 PM)
+    } else if (hours >= 16 && hours < 20) {
+        return "Red"; // Evening (4 PM to 7:59 PM)
+    } else {
+        return "Red"; // Night (8 PM to 5:59 AM)
+    }
+}
+
+const trafficLightColor = getTrafficLightColor();
+console.log(`The current traffic light color is ${trafficLightColor}`);
